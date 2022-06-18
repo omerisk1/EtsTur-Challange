@@ -17,6 +17,11 @@ body {
   cursor: pointer;
 }
 
+.cardCnt:hover {
+  transform: scale(1.03);
+  transition: 200ms;
+}
+
 .cardDesc {
   padding: 15px;
 }
@@ -40,7 +45,7 @@ body {
 }
 
 .cardDate {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 10px;
   display: flex;
   justify-content: start;
@@ -51,4 +56,38 @@ body {
 
 .cardDate > p {
   margin: auto 0px;
+}
+
+.spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 0);
+}
+
+.searchCnt {
+  padding: 20px 25px;
+  display: flex;
+  background-color: #fff;
+  height: 50px;
+  margin-bottom: 25px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchCnt > div > p {
+  margin: 0px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.searchCnt > div > input {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 200px;
+  padding: 5px 10px;
+}
+
+input[type=text] {
+  text-transform: lowercase;
 }/*# sourceMappingURL=style.css.map */
