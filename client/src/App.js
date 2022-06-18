@@ -1,14 +1,13 @@
 import "./css/style.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-function App() {
-  {console.log(process.env.REACT_APP_API_KEY);}
-  return (
-    <div className="App">
-      <p>Test</p>
-    </div>
-  )
+import "bootstrap/dist/css/bootstrap.min.css";
+import TabMenu from "./components/TabMenu";
 
- 
+function App() {
+  return (
+    <>
+      <TabMenu />
+    </>
+  );
 }
 
 export default App;

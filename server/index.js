@@ -1,17 +1,15 @@
 const express = require("express");
 
 const server = express();
+const data = require("./data");
 
-server.get("/", (req, res) => {
+server.get("/api", (req, res) => {
   res
-    .json({
-      title: "title 1",
-      description: "description",
-    })
+    .json(data)
     .status(200);
 });
 
-const port = 3000;
+const port = 5000;
 server.listen(port, () => {
   console.log(`${port} listening..`);
 });

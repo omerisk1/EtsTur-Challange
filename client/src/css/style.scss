@@ -1,5 +1,13 @@
 
-$color: yellow;
+$rgbaColor:  linear-gradient(to right top, #bad1f4, #cdd9f4, #dde1f4, #eaeaf4, #f4f4f4);
+
 body {
-    background-color: $color;
+    background-image: $rgbaColor;
+    min-height: 100vh;
+
+}
+.nav-tabs{
+    background-color: #96b0c6;
+    border-radius: 6px;
+
 }
