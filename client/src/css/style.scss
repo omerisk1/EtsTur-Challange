@@ -9,5 +9,44 @@ body {
 .nav-tabs{
     background-color: #96b0c6;
     border-radius: 6px;
-
+}
+.cardCnt{
+    background-color: #fff;
+    height: 400px;
+    padding :20px;
+    border-radius: 6px;
+    -webkit-box-shadow: 1px 4px 28px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 4px 28px -4px rgba(0,0,0,0.75);
+    box-shadow: 1px 4px 28px -4px rgba(0,0,0,0.75);
+    cursor: pointer;
+}
+.cardDesc{
+    padding: 15px;
+}
+.cardTitle{
+    margin-top: 15px;
+}
+.cardLocation{
+    margin-top: 20px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    font-size:19px;
+}
+.cardLocation > p{
+    margin: auto 0px;
+}
+.cardDate{
+    margin-top: 20px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    font-size:19px;
+}
+.cardDate > p{
+    margin: auto 0px;
 }
