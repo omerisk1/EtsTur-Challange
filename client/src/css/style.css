@@ -1,6 +1,7 @@
 body {
   background-image: linear-gradient(to right top, #bad1f4, #cdd9f4, #dde1f4, #eaeaf4, #f4f4f4);
   min-height: 100vh;
+  text-decoration: none;
 }
 
 .nav-tabs {
@@ -15,6 +16,7 @@ body {
   border-radius: 6px;
   box-shadow: 1px 4px 28px -4px rgba(0, 0, 0, 0.75);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .cardCnt:hover {
@@ -28,6 +30,7 @@ body {
 
 .cardTitle {
   margin-top: 15px;
+  text-decoration: none;
 }
 
 .cardLocation {
@@ -90,4 +93,16 @@ body {
 
 input[type=text] {
   text-transform: lowercase;
+}
+
+.carousel-control-next-icon {
+  width: 2rem !important;
+  height: 2rem !important;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1053/1053176.png") !important;
+}
+
+.carousel-control-prev-icon {
+  width: 2rem !important;
+  height: 2rem !important;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1053/1053177.png") !important;
 }/*# sourceMappingURL=style.css.map */
