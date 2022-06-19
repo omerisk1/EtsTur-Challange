@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,200;0,300;0,500;1,500;1,900&family=Open+Sans&family=Ubuntu:wght@300&display=swap');
 
 $rgbaColor:  linear-gradient(to right top, #bad1f4, #cdd9f4, #dde1f4, #eaeaf4, #f4f4f4);
-
+$smooth: smooth;
+html{
+    scroll-behavior: $smooth;
+}
 body {
     background-image: $rgbaColor;
     min-height: 100vh;
     text-decoration: none;
+    font-family: 'Noto Sans', sans-serif;
 
 }
 
@@ -22,10 +27,10 @@ body {
     box-shadow: 1px 4px 28px -4px rgba(0,0,0,0.75);
     cursor: pointer;
     text-decoration: none;
+    transition: all .2s ease-in-out;
 }
 .cardCnt:hover{
-    transform: scale(1.03);
-    transition: 200ms;
+    transform: scale(1.05);
 }
 .cardDesc{
     padding: 15px;
@@ -98,4 +103,86 @@ input[type="text"] {
     width: 2rem !important;
     height: 2rem !important;
     background-image: url("https://cdn-icons-png.flaticon.com/512/1053/1053177.png") !important;
+}
+.detail-NameCategory{
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+.detailDt> h4{
+    margin-top: 35px; 
+    margin-bottom: 20px;
+}
+.detailDt> div >p{
+    margin-bottom: 25px; 
+}
+.detailDt> div{
+    background-color:#ddd;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+.detailSeat{
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px; 
+}
+.detailArtist{
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px; 
+}
+.detailDesc{
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px; 
+    margin-top: 30px;
+}
+.detailEventName{
+    margin-left: 10px;
+    font-size: 17px;
+    font-weight: 400;
+}
+.rating{
+
+}
+.rating label{
+    display: block;
+    cursor: pointer;
+    width: 50px;
+    background: #ccc;
+}
+.map{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.detailAddress{
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px; 
+    margin-bottom:20px;
+}
+.artist{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.artistImg{
+    border-radius: 30px;
+    margin-bottom: 20px;
+    transition: all .2s ease-in-out;
+}
+.artistImg:hover{
+    transform: scale(0.9);
+    cursor: pointer;
+    
+}
+.artistCap{
+    display:flex;
+    align-items: center;
 }
