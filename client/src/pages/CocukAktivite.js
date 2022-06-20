@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Card from "../components/Card";
 import { Row, Col } from "react-bootstrap";
 
-function Opera({ word }) {
+function Opera({ undatedFilter }) {
   const [query, setQuery] = useState("");
-  const eventFilter = word.filter((x) => x.category === "Çocuk Aktivite");
+  const eventFilter = undatedFilter.filter((x) => x.category === "Çocuk Aktivite");
   const search = (filtered) => {
     return filtered.filter(
       (item) =>

@@ -5,9 +5,11 @@ import { Spinner } from "react-bootstrap";
 import carouselBackup from "../img/carouselBackup.png";
 import { FcComments, FcClapperboard, FcInfo } from "react-icons/fc";
 import ReactStars from "react-rating-stars-component";
-import SeatPicker from "../components/SeatPicker";
+import Maps from "../components/Maps";
 
 function EventDetail() {
+  // //Days Control Case
+  
   const [detail, setDetail] = useState("");
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
@@ -22,6 +24,7 @@ function EventDetail() {
   useEffect(() => {
     dataDetail();
   }, []);
+  
 
   return (
     <>
@@ -159,7 +162,7 @@ function EventDetail() {
                 <p>Harbiye, Taşkışla Cd. No:8, 34367 Şişli</p>
               </Col>
               <Col md={6}>
-                <SeatPicker></SeatPicker>
+                {/* <Maps></Maps> */}
               </Col>
             </Row>
           </Container>

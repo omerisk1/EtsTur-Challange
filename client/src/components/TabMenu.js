@@ -7,22 +7,31 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import { useState, useEffect } from "react";
 import React from "react";
+import OutofDate from "../pages/OutofDate";
 
-function TabMenu() {
-  const [word, setWord] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const getData = async () => {
-    await fetch("/api")
-      .then((res) => res.json())
-      .then((data) => {
-        setWord(data);
-        setLoading(false);
-      });
-  };
-  useEffect(() => {
-    getData();
-  }, []);
+function TabMenu({ word, loading }) {
+  const d1 = new Date();
+  let time;
+  let days;
+  
 
+  const undatedFilter = word.filter((item) => {
+    const d2 = new Date(item.date);
+    let time = d2 - d1;
+    let days = Math.ceil(time / (1000 * 60 * 60 * 24));
+    if (days > 0) {
+      return item;
+    }
+  });
+  const outdatedFilter = word.filter((item) => {
+    const d2 = new Date(item.date);
+    let time = d2 - d1;
+    let days = Math.ceil(time / (1000 * 60 * 60 * 24));
+    if (days < 0) {
+      return item;
+    }
+  });
+ 
   return (
     <>
       {loading ? (
@@ -38,16 +47,19 @@ function TabMenu() {
             className="nav-tabs my-5"
           >
             <Tab eventKey="tab-1" title="Konser">
-              <Konser word={word} />
+              <Konser  undatedFilter={undatedFilter} />
             </Tab>
             <Tab eventKey="tab-2" title="Tiyatro">
-              <Tiyatro word={word} />
+              <Tiyatro undatedFilter={undatedFilter} />
             </Tab>
             <Tab eventKey="tab-5" title="Festival">
-              <Festival word={word} />
+              <Festival undatedFilter={undatedFilter}  />
             </Tab>
             <Tab eventKey="tab-3" title="Çocuk Aktivite">
-              <CocukAktivite word={word} />
+              <CocukAktivite undatedFilter={undatedFilter}  />
+            </Tab>
+            <Tab eventKey="tab-4" title="Tarihi Geçen Etkinlikler">
+              <OutofDate word={word} outdatedFilter={outdatedFilter}   />
             </Tab>
           </Tabs>
         </div>

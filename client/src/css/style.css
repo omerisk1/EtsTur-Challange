@@ -17,7 +17,6 @@ body {
 
 .cardCnt {
   background-color: #fff;
-  height: 400px;
   padding: 20px;
   border-radius: 6px;
   box-shadow: 1px 4px 28px -4px rgba(0, 0, 0, 0.75);
@@ -204,4 +203,50 @@ input[type=text] {
 .artistCap {
   display: flex;
   align-items: center;
+}
+
+.outDateCnt {
+  opacity: 0.5;
+}
+
+.aktifBadge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 40px;
+  background-color: green;
+  border-radius: 12px;
+  color: white;
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  font-weight: 600;
+}
+
+.pasifBadge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 40px;
+  background-color: red;
+  border-radius: 12px;
+  color: white;
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  font-weight: 600;
+}
+
+.aktifBadge > p {
+  margin: auto;
+}
+
+.pasifBadge > p {
+  margin: auto;
+}
+
+.imgCnt {
+  position: relative;
 }/*# sourceMappingURL=style.css.map */

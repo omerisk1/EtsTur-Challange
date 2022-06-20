@@ -2,15 +2,16 @@ import React, { useState,useEffect } from "react";
 import Card from "../components/Card";
 import { Row, Col } from "react-bootstrap";
 
-function Konser({ word }) {
+function Konser({ word,undatedFilter}) {
   const [query, setQuery] = useState("");
-  const eventFilter = word.filter((x) => x.category === "Konser");
+  const eventFilter = undatedFilter.filter((x) => x.category === "Konser");
   const search = (filtered) => {
     return filtered.filter((item) =>
      item.eventName.toLowerCase().includes(query) || 
      item.country.toLowerCase().includes(query) || 
      item.date.toLowerCase().includes(query)) 
   }
+  
   return (
     <div>
       <div className="searchCnt">

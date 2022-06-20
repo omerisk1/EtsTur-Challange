@@ -2,9 +2,9 @@ import React, { useState,useEffect } from "react";
 import Card from "../components/Card";
 import { Row, Col } from "react-bootstrap";
 
-function Festival({word}) {
+function Festival({undatedFilter}) {
   const [query, setQuery] = useState("");
-  const eventFilter = word.filter(x => x.category==="Festival")
+  const eventFilter = undatedFilter.filter(x => x.category==="Festival")
   const search = (filtered) => {
     return filtered.filter((item) =>
      item.eventName.toLowerCase().includes(query) || 

@@ -11,7 +11,8 @@ const data = [
     ],
     category: "Konser",
     country: "Istanbul",
-    date: "18/07/2022",
+    date: "06.29.2022 19:00",
+    startHour:"",
     carouselImg2: "https://pbs.twimg.com/media/DzD-JKRX4AA2UUP.jpg:large",
     carouselImg1:
       "https://enbursa.com/public/haber/2022/04/01/299721-yildiz-tilbe-den-kendisini-hakaret-ve-tehdit-eden-kisilere-suc-duyurusu-1af81ae5e0e7974b954609f39400f871.jpg",
@@ -31,7 +32,7 @@ const data = [
     ],
     category: "Konser",
     country: "Konya",
-    date: "05/09/2022",
+    date: "07.30.2022 16:00",
     carouselImg1:
       "https://haber.sol.org.tr/sites/default/files/styles/content_image_size_type4/public/images/content/article/2022/06/10/anadolufest-2.jpg?itok=_BS_XYGF",
     carouselImg2:
@@ -51,7 +52,7 @@ const data = [
     ],
     category: "Konser",
     country: "Eskişehir",
-    date: "05/08/2022",
+    date: "06.13.2022 15:00",
     carouselImg1:
       "https://www.yerelingundemi.com/images/posts/202205/125844_x.webp",
     carouselImg2:
@@ -71,7 +72,7 @@ const data = [
     ],
     category: "Konser",
     country: "Istanbul",
-    date: "23/07/2022",
+    date: "06.20.2022 20:00",
     carouselImg1:
       "https://cdn.otuzbeslik.com/img/etkinlik/sagopa-kajmer.event.det22dunl48k.jpg",
     carouselImg2:
@@ -91,7 +92,7 @@ const data = [
     ],
     category: "Konser",
     country: "Istanbul",
-    date: "02/07/2022",
+    date: "07.11.2022 21:00",
     carouselImg1:
       "data:image/jpeg;base64,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",
     carouselImg2:
@@ -111,7 +112,7 @@ const data = [
     ],
     category: "Konser",
     country: "Ankara",
-    date: "15/07/2022",
+    date: "11.20.2022 16:00",
     carouselImg1:
       "http://images5.fanpop.com/image/photos/27300000/maNga-manga-turkey-2010-esc-27333389-1920-1080.jpg",
     carouselImg2:
@@ -132,7 +133,7 @@ const data = [
     ],
     category: "Konser",
     country: "Istanbul",
-    date: "15/09/2022",
+    date: "08.20.2022 22:00",
     carouselImg1:
       "https://etkinlikdenizli.com/wp-content/uploads/2019/03/emre-aydin_1920x1080-altmuzik.com_-1920x1080.jpg",
     carouselImg2:
@@ -153,7 +154,7 @@ const data = [
     ],
     category: "Konser",
     country: "Istanbul",
-    date: "01/09/2022",
+    date: "08.11.2022 23:00",
     carouselImg1:
       "https://i2.milimaj.com/i/milliyet/75/1200x675/5f7c20585542831ae8602e94.jpg",
     carouselImg2:
@@ -173,7 +174,7 @@ const data = [
     ],
     category: "Konser",
     country: "Izmir",
-    date: "28/06/2022",
+    date: "07.10.2022 23:00",
     carouselImg1:
       "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b0130929-875a-4973-b3ae-6af63c753661/d72btlb-c584cf9e-75b6-45d6-b975-c3ec5fcf07c2.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IwMTMwOTI5LTg3NWEtNDk3My1iM2FlLTZhZjYzYzc1MzY2MVwvZDcyYnRsYi1jNTg0Y2Y5ZS03NWI2LTQ1ZDYtYjk3NS1jM2VjNWZjZjA3YzIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.v2M0h90iho2xIMqX-3o8UxH_TR0l0oCnBUqssnLhDm0",
     carouselImg2:
@@ -193,7 +194,7 @@ const data = [
     ],
     category: "Konser",
     country: "Izmir",
-    date: "29/06/2022",
+    date: "06.23.2022 19:00",
     carouselImg1:
       "https://i1.imgiz.com/rshots/10099/emir-can-igrek-bu-yol-nereye-gider-bilmem-ama-yuruyorum-iste_10099243-10_1920x1080.jpg",
     carouselImg2:
@@ -214,7 +215,7 @@ const data = [
     ],
     category: "Konser",
     country: "Izmir",
-    date: "03/07/2022",
+    date: "07.15.2022 19:00",
     carouselImg1:
       "https://iasbh.tmgrup.com.tr/6a26c1/0/0/0/0/0/0?u=https://isbh.tmgrup.com.tr/sb/album/2018/12/15/ilyas-yalcintas-her-ne-yasiyorsam-beni-olgunlastiriyor-1544856442079.jpg&l=1",
     carouselImg2:
@@ -235,7 +236,7 @@ const data = [
     ],
     category: "Konser",
     country: "Istanbul",
-    date: "15/07/2022",
+    date:"07.15.2022 17:00",
     carouselImg1:
       "https://cdnb.artstation.com/p/assets/images/images/029/316/243/large/emir-rasit-gokce-20200811-165608.jpg?1597154478",
     carouselImg2:
@@ -256,7 +257,7 @@ const data = [
     ],
     category: "Konser",
     country: "Istanbul",
-    date: "15/10/2022",
+    date: "07.15.2022 19:00",
     carouselImg1:
       "https://i.pinimg.com/originals/04/13/8e/04138ee1ab4d86d2db300fe0597f409b.jpg",
     carouselImg2:
@@ -277,7 +278,7 @@ const data = [
     ],
     category: "Konser",
     country: "Izmir",
-    date: "28/06/2022",
+    date: "06.10.2022 19:00",
     carouselImg1:
       "https://i.haberglobal.com.tr/storage/haber/2021/09/15/haluk-levent-o-goruntuleri-paylasti-hayatinin-en-bilincsiz-yardimiydi_1631696091.jpg",
     carouselImg2:
@@ -297,7 +298,7 @@ const data = [
     ],
     category: "Konser",
     country: "Istanbul",
-    date: "29/06/2022",
+    date: "08.15.2022 19:00",
     carouselImg1:
       "https://img.besthqwallpapers.com/Uploads/22-9-2019/105472/sertab-erener-portrait-turkish-singer-photoshoot-famous-singers.jpg",
     carouselImg2: "https://cdn.nerde.co/sertab-erener.jpg-1540904700.jpeg",
@@ -317,7 +318,7 @@ const data = [
     ],
     category: "Konser",
     country: "Istanbul",
-    date: "29/07/2022",
+    date: "09.15.2022 19:00",
     carouselImg1:
       "https://i.pinimg.com/originals/ee/33/b3/ee33b35e78b1d3c1f1dd58ae094a831d.jpg",
     carouselImg2:
@@ -338,7 +339,7 @@ const data = [
     ],
     category: "Konser",
     country: "Istanbul",
-    date: "14/07/2022",
+    date: "10.15.2022 19:00",
     carouselImg1:
       "https://3.bp.blogspot.com/-v3ghV1vYXMA/XNCV0CJXPFI/AAAAAAAAPAQ/YtCFDG2Zx445XoQz3_eTv3QXQzcdndrMgCLcBGAs/w1200-h630-p-k-no-nu/31694783_174644606531919_8783125966185562112_n-min.jpg",
     carouselImg2:
@@ -353,13 +354,12 @@ const data = [
     artist: [
       {
         name: "Ayna",
-        artistImg:
-          "https://www.timeturk.com/resim/detay/62/625629.jpg",
+        artistImg: "https://www.timeturk.com/resim/detay/62/625629.jpg",
       },
     ],
     category: "Konser",
     country: "Izmir",
-    date: "14/07/2022",
+    date: "06.01.2022 23:00",
     carouselImg1:
       "https://media-cdn.t24.com.tr/media/stories/2017/05/raw_ayna-20-yil-serefine-eski-sarkilarini-coverladi-cok-satsin-diye-degil-soyleyecek-sozun-varsa-sarki-yaparsin_474375282.jpg",
     carouselImg2:
@@ -379,7 +379,7 @@ const data = [
     ],
     category: "Konser",
     country: "Izmir",
-    date: "14/08/2022",
+    date: "07.15.2022 24:00",
     carouselImg1:
       "https://kamfi.net/wp-content/uploads/2020/02/G%C3%96KHAN-T%C3%9CRKMEN.jpg",
     carouselImg2:
@@ -390,10 +390,15 @@ const data = [
   {
     id: 20,
     eventName: "Irmak Arıcı Konseri",
-    artist: [{name: "Irmak Arıcı"},{artistImg: "https://i4.hurimg.com/i/hurriyet/75/750x422/61136ffe4e3fe10a3431cf00.jpeg"}],
+    artist: [
+      { 
+        name: "Irmak Arıcı",
+        artistImg: "https://i4.hurimg.com/i/hurriyet/75/750x422/61136ffe4e3fe10a3431cf00.jpeg",
+      },
+    ],
     category: "Konser",
     country: "Ankara",
-    date: "14/06/2022",
+    date: "09.15.2022 19:00",
     carouselImg1:
       "https://enbursa.com/public/haber/2021/03/25/180961-irmak-arici-dan-guya-cikti-893dbb2281a96f1824306bf2ad94af4c.jpg",
     carouselImg2:
@@ -405,10 +410,15 @@ const data = [
   {
     id: 21,
     eventName: "Yüksek Sadakat Konseri",
-    artist: [{name: "Yüksek Sadakat"},{artistImg: "https://staticws.biletix.com/static/images/live/event/eventimages/VRS12_gorsel.png"}],
+    artist: [
+      { name: "Yüksek Sadakat",
+        artistImg:
+          "https://staticws.biletix.com/static/images/live/event/eventimages/VRS12_gorsel.png",
+      },
+    ],
     category: "Konser",
     country: "Istanbul",
-    date: "30/07/2022",
+    date: "07.10.2022 13:00",
     carouselImg1: "https://images6.alphacoders.com/651/thumb-1920-651098.jpg",
     carouselImg2:
       "https://im.haberturk.com/2018/05/05/ver1525521114/1950714_1200x627.jpg",
@@ -419,10 +429,15 @@ const data = [
   {
     id: 22,
     eventName: "Irem Derici",
-    artist: [{name: "İrem Derici"},{artistImg: "https://i2.milimaj.com/i/milliyet/75/0x410/607b09c0554282297ca1b51f.jpg"}],
+    artist: [
+      { name: "İrem Derici",
+        artistImg:
+          "https://i2.milimaj.com/i/milliyet/75/0x410/607b09c0554282297ca1b51f.jpg",
+      },
+    ],
     category: "Konser",
     country: "Istanbul",
-    date: "30/06/2022",
+    date: "08.12.2022 19:00",
     carouselImg1:
       "https://media-cdn.t24.com.tr/media/library/2020/10/1602503483989-2.jpg",
     carouselImg2:
@@ -451,7 +466,7 @@ const data = [
     ],
     category: "Tiyatro",
     country: "Istanbul",
-    date: "30/06/2022",
+    date: "06.20.2022 13:00",
     carouselImg2:
       "https://cdn.odatv4.com/images2/2019_12/2019_12_02/ikininbiri_1_1680x935.jpg",
     carouselImg1:
@@ -485,7 +500,7 @@ const data = [
     ],
     category: "Tiyatro",
     country: "Ankara",
-    date: "01/07/2022",
+    date: "07.19.2022 23:00",
     carouselImg1:
       "https://enbursa.com/public/haber/2021/12/20/264028-iyi-kotu-cirkin-oyununa-buyuk-ilgi-2e0c8b2a2a7f011c8ecc49a8788cbe56.jpg",
     carouselImg2:
@@ -505,7 +520,7 @@ const data = [
     ],
     category: "Tiyatro",
     country: "Istanbul",
-    date: "03/07/2022",
+    date: "08.01.2022 19:00",
     carouselImg2:
       "https://image.istanbul.net.tr/uploads/2021/12/event/visne-bahcesi.jpg",
     carouselImg1:
@@ -531,7 +546,7 @@ const data = [
     ],
     category: "Tiyatro",
     country: "Izmir",
-    date: "15/07/2022",
+    date: "09.11.2022 19:00",
     carouselImg1:
       "https://www.uplifers.com/app/uploads/2019/10/eteklervepantolonlarkapak.jpg",
     carouselImg2:
@@ -552,7 +567,7 @@ const data = [
     ],
     category: "Tiyatro",
     country: "Istanbul",
-    date: "30/09/2022",
+    date: "09.11.2022 23:00",
     carouselImg1:
       "https://www.zorlupsm.com/uploads/event/ogImage/1200x630/oksimoron-1200x630-1002.jpg",
     carouselImg2:
@@ -573,7 +588,7 @@ const data = [
     ],
     category: "Tiyatro",
     country: "Istanbul",
-    date: "11/09/2022",
+    date: "10.11.2022 19:00",
     carouselImg1:
       "data:image/jpeg;base64,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",
     carouselImg2:
@@ -608,7 +623,7 @@ const data = [
     ],
     category: "Tiyatro",
     country: "Istanbul",
-    date: "11/07/2022",
+    date: "11.11.2022 13:00",
     carouselImg1:
       "https://firsat.me/img/big1024/29955_6053554fec1d2_1920x1080.jpg",
     carouselImg2:
@@ -629,7 +644,7 @@ const data = [
     ],
     category: "Tiyatro",
     country: "Ankara",
-    date: "11/06/2022",
+    date: "10.21.2022 19:00",
     carouselImg1:
       "https://www.habernediyor.com/images/resize/80/637x332/haberler/2021/01/yurdaer_okur_ran_oyununu_dijitale_tasidi_h53985_fbfc0.jpg",
     carouselImg2:
@@ -660,7 +675,7 @@ const data = [
     ],
     category: "Festival",
     country: "Zonguldak",
-    date: "11/06/2022",
+    date: "10.21.2022 23:00",
     carouselImg1:
       "http://anadoluefes.com.tr/Admin/images/ContentImage/doga-dostu-festival-bardaklarimiz-y.jpg",
     carouselImg2:
@@ -691,7 +706,7 @@ const data = [
     ],
     category: "Festival",
     country: "Istanbul",
-    date: "12/07/2022",
+    date: "07.21.2022 19:00",
     carouselImg1:
       "https://kuzeyfest.org/wp-content/uploads/2019/07/Kuzey-Led-1-5400x3394.jpg",
     carouselImg2:
@@ -722,7 +737,7 @@ const data = [
     ],
     category: "Festival",
     country: "Edirne",
-    date: "21/07/2022",
+    date: "07.21.2022 19:00",
     carouselImg1:
       "https://festivall.com.tr/festival-foto/8232/orginal/trakya-fest-2022-082555100-1651155663-0.jpg",
     carouselImg2:
@@ -753,7 +768,7 @@ const data = [
     ],
     category: "Festival",
     country: "Konya",
-    date: "29/07/2022",
+    date: "08.21.2022 22:00",
     carouselImg1:
       "https://api.bubilet.com.tr/files/Etkinlik/anadolufest-konya-26949.png",
     carouselImg2:
@@ -783,7 +798,7 @@ const data = [
     ],
     category: "Festival",
     country: "Trabzon",
-    date: "29/09/2022",
+    date: "10.21.2022 13:00",
     carouselImg1:
       "https://festtr.com/wp-content/uploads/trabzon-genclik-3.06.2022-04-25-53.jpg",
     carouselImg2:
@@ -813,7 +828,7 @@ const data = [
     ],
     category: "Festival",
     country: "Izmir",
-    date: "11/09/2022",
+    date: "10.21.2022 11:00",
     carouselImg1:
       "https://muzikonair.com/wp-content/uploads/2018/08/gezgin-fest-2018.jpg",
     carouselImg2:
@@ -824,14 +839,16 @@ const data = [
   },
   {
     id: 37,
-    eventName: "Charlie'nin Çikolata Fabrikasında Çocuk Oyunu",
+    eventName: "Charlie'nin Çocuk Oyunu",
     category: "Çocuk Aktivite",
-    artist: [{
-      name: "Bilgi Yok",
-      artistImg: "https://static.yakala.co/images/0450546_0.jpeg"
-    }],
+    artist: [
+      {
+        name: "Bilgi Yok",
+        artistImg: "https://static.yakala.co/images/0450546_0.jpeg",
+      },
+    ],
     country: "Istanbul",
-    date: "30/06/2022",
+    date: "10.22.2022 19:00",
     carouselImg1:
       "https://firsat.me/img/big1024/33707_61af4ebc731a4_1920x1080.webp",
     carouselImg2:
@@ -844,12 +861,14 @@ const data = [
     id: 38,
     eventName: "Karlar Ülkesi Çocuk Oyunu",
     category: "Çocuk Aktivite",
-    artist: [{
-      name: "Bilgi Yok",
-      artistImg: "https://nevakit.com/image/event/d9dc3dfe.jpg"
-    }],
+    artist: [
+      {
+        name: "Bilgi Yok",
+        artistImg: "https://nevakit.com/image/event/d9dc3dfe.jpg",
+      },
+    ],
     country: "Istanbul",
-    date: "30/07/2022",
+    date: "06.23.2022 19:00",
     carouselImg2:
       "https://firsat.me/img/big1024/47336_623c4c90532a8_1289x658.webp",
     carouselImg1:
@@ -862,12 +881,15 @@ const data = [
     id: 39,
     eventName: "Taş Devri Çocuk Oyunu",
     category: "Çocuk Aktivite",
-    artist: [{
-      name: "Bilgi Yok",
-      artistImg: "https://api.bubilet.com.tr/files/Etkinlik/tas-devri-cocuk-oyunu-55051.jpg"
-    }],
+    artist: [
+      {
+        name: "Bilgi Yok",
+        artistImg:
+          "https://api.bubilet.com.tr/files/Etkinlik/tas-devri-cocuk-oyunu-55051.jpg",
+      },
+    ],
     country: "Istanbul",
-    date: "30/08/2022",
+    date: "07.21.2022 15:00",
     carouselImg1:
       "https://firsat.me/img/big1024/21.12.22_11.18.06_1200x700_1.webp",
     carouselImg2:

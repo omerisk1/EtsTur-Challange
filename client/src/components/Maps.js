@@ -1,7 +1,7 @@
 import React from "react";
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
-function SeatPicker() {
+function Maps() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyCr1VKCITf-iH-q5bPrawEJacfeglBdFf0",
@@ -25,4 +25,4 @@ function SeatPicker() {
   );
 }
 
-export default SeatPicker;
+export default Maps;
