@@ -7,12 +7,24 @@ body {
   background-image: linear-gradient(to right top, #bad1f4, #cdd9f4, #dde1f4, #eaeaf4, #f4f4f4);
   min-height: 100vh;
   text-decoration: none;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif !important;
 }
 
 .nav-tabs {
-  background-color: #96b0c6;
+  background: linear-gradient(0deg, rgb(189, 189, 189) 0%, rgb(55, 214, 44) 0%, rgb(158, 230, 158) 100%, rgb(208, 208, 242) 100%);
   border-radius: 6px;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-item:hover {
+  border: none;
+}
+
+.nav-link.active {
+  color: black !important;
 }
 
 .cardCnt {
@@ -116,6 +128,7 @@ input[type=text] {
   background-color: white;
   padding: 10px;
   border-radius: 8px;
+  padding: 20px;
 }
 
 .detailDt > h4 {
@@ -128,8 +141,8 @@ input[type=text] {
 }
 
 .detailDt > div {
-  background-color: #ddd;
-  padding: 10px;
+  background-color: #B3FB63;
+  padding: 25px;
   border-radius: 12px;
   font-size: 17px;
   margin-bottom: 20px;
@@ -137,27 +150,31 @@ input[type=text] {
 
 .detailSeat {
   background-color: white;
-  padding: 10px;
+  padding: 20px;
   border-radius: 8px;
 }
 
 .detailArtist {
   background-color: white;
-  padding: 10px;
+  padding: 20px;
   border-radius: 8px;
 }
 
 .detailDesc {
   background-color: white;
-  padding: 10px;
+  padding: 25px;
   border-radius: 8px;
   margin-top: 30px;
 }
 
+.detailDesc > h5 {
+  font-weight: 600;
+}
+
 .detailEventName {
   margin-left: 10px;
-  font-size: 17px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .rating label {
@@ -215,7 +232,7 @@ input[type=text] {
   align-items: center;
   width: 85px;
   height: 40px;
-  background-color: green;
+  background-color: #7BBF30;
   border-radius: 12px;
   color: white;
   position: absolute;
@@ -249,4 +266,26 @@ input[type=text] {
 
 .imgCnt {
   position: relative;
+}
+
+.adres {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.adres > p {
+  margin: auto 0px;
+}
+
+.info {
+  padding: 20px;
+  background-color: #EFF0ED;
+  border-radius: 20px;
+}
+
+.carouselCnt {
+  background-color: #F6FBF3;
+  border-radius: 12px;
+  padding: 20px;
 }/*# sourceMappingURL=style.css.map */

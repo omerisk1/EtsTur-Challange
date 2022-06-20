@@ -3,9 +3,12 @@ import { Link, useParams } from "react-router-dom";
 import { Carousel, Container, Row, Col } from "react-bootstrap";
 import { Spinner } from "react-bootstrap";
 import carouselBackup from "../img/carouselBackup.png";
-import { FcComments, FcClapperboard, FcInfo } from "react-icons/fc";
+import { FcComments, FcClapperboard, FcInfo,FcGlobe } from "react-icons/fc";
 import ReactStars from "react-rating-stars-component";
 import Maps from "../components/Maps";
+import backupImg from "../img/carouselBackup.png"
+import backup2Img from "../img/backup2.jpg"
+import backup3Img from "../img/backup3.jpg"
 
 function EventDetail() {
   // //Days Control Case
@@ -36,7 +39,7 @@ function EventDetail() {
         <>
           <Container>
             {/* Carousel */}
-            <Row>
+            <Row className="carouselCnt">
               <Col md={1}></Col>
               <Col md={12} xs={12}>
                 <Carousel>
@@ -45,7 +48,8 @@ function EventDetail() {
                       className="d-block w-100"
                       src={detail.carouselImg1}
                       alt="First slide"
-                      style={{ height: 400 }}
+                      style={{ height: 450, objectFit:"contain" }}
+                      onError={(e) => (e.target.onerror = null, e.target.src = backup2Img)}
                     />
                   </Carousel.Item>
                   <Carousel.Item>
@@ -57,7 +61,8 @@ function EventDetail() {
                           : carouselBackup
                       }
                       alt="Second slide"
-                      style={{ height: 400 }}
+                      style={{ height: 450, objectFit:"contain" }}
+                      onError={(e) => (e.target.onerror = null, e.target.src = backup3Img)}
                     />
                   </Carousel.Item>
                 </Carousel>
@@ -68,7 +73,7 @@ function EventDetail() {
             {/* Event Name and Category */}
             <Row className="mt-4 detail-NameCategory">
               <Col lg={6}>
-                <h3>{detail.eventName}</h3>
+                <h3 style={{fontWeight: '600'}}>{detail.eventName}</h3>
                 <FcComments />
                 <span className="detailEventName">{detail.category}</span>
               </Col>
@@ -97,7 +102,7 @@ function EventDetail() {
                 <span
                   style={{
                     marginBottom: "20px",
-                    fontSize: "25px",
+                    fontSize: "27px",
                     fontWeight: "600",
                     marginTop: "15px",
                   }}
@@ -113,6 +118,8 @@ function EventDetail() {
                     width="150"
                     height="150"
                     className="artistImg"
+                    alt="Artist"
+                    onError={(e) => (e.target.onerror = null, e.target.src = backupImg)}
                   ></img>
                   <p style={{ fontSize: "20px", fontWeight: "600" }}>
                     {item.name}
@@ -126,9 +133,9 @@ function EventDetail() {
                 <h3>Koltuk Seçimi</h3>
               </Col>
 
-              <Col md={6}>
+              <Col md={6} className="info">
                 
-                  <h3 style={{ marginBottom: "20px" }}>
+                  <h3 style={{ marginBottom: "20px", fontWeight: "600" }}>
                     Etkinlik Hakkında Bilmeniz Gerekenler
                   </h3>
                   <div style={{ marginBottom: "10px", display: "flex" }}>
@@ -157,12 +164,16 @@ function EventDetail() {
             </Row>
             {/* Adress */}
             <Row className="mt-4 detailAddress">
-              <Col md={6}>
-                <h2>Harbiye Cemil Topuzlu Açıkhava Tiyatrosu</h2>
-                <p>Harbiye, Taşkışla Cd. No:8, 34367 Şişli</p>
+              <Col md={6} style={{padding:"20px"}}>
+                <h3 style={{fontWeight:"600",marginBottom:"20px"}}>{detail.place}</h3>
+                <div className="adres">
+                  <FcGlobe size={20}></FcGlobe>
+                  <p style={{fontSize:"18px"}}>{detail.address}</p>
+                </div>
+                
               </Col>
               <Col md={6}>
-                {/* <Maps></Maps> */}
+                <Maps lat={detail.lat} lng={detail.lng}></Maps>
               </Col>
             </Row>
           </Container>

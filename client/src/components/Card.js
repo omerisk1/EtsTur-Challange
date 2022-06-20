@@ -1,9 +1,11 @@
 import React from "react";
 import { GrLocation } from "react-icons/gr";
 import { MdOutlineDateRange } from "react-icons/md";
+import { FcCalendar,FcAddressBook } from "react-icons/fc";
 import { Row, Col } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import EventDetail from "../pages/EventDetail";
+import backupImg from "../img/carouselBackup.png"
 
 function Card({ eventFilter, out, badge }) {
   const linkStyle = {
@@ -25,17 +27,18 @@ function Card({ eventFilter, out, badge }) {
                       src={dt.img}
                       height={200}
                       style={{ width: "100%", borderRadius: "12px" }}
+                      onError={(e) => (e.target.onerror = null, e.target.src = backupImg)}
                     ></img>
                   </div>
                   <div className="cardTitle">
                     <h3>{dt.eventName}</h3>
                   </div>
                   <div className="cardLocation">
-                    <GrLocation />
+                    <FcAddressBook />
                     <p>{dt.country}</p>
                   </div>
                   <div className="cardDate">
-                    <MdOutlineDateRange />
+                    <FcCalendar />
                     <p>{dt.date}</p>
                   </div>
                 </div>
