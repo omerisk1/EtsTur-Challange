@@ -4,11 +4,16 @@ import TabMenu from "./components/TabMenu";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import EventDetail from "./pages/EventDetail";
 import { useState, useEffect } from "react";
+import Footer from "./components/Footer";
+import Nav from "./components/Navbar"
+
+
+
 
 function App() {
   
   const [word, setWord] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const getData = async () => {
     await fetch("/api")
@@ -25,6 +30,7 @@ function App() {
 
   return (
     <>
+     <Nav></Nav>
       <Router>
         <Routes>
           <Route
@@ -35,6 +41,9 @@ function App() {
           <Route path="/detail/:id" element={<EventDetail />}></Route>
         </Routes>
       </Router>
+      <div className="footer">
+            <Footer></Footer>
+      </div>
     </>
   );
 }

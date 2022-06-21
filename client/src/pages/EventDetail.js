@@ -3,16 +3,27 @@ import { Link, useParams } from "react-router-dom";
 import { Carousel, Container, Row, Col } from "react-bootstrap";
 import { Spinner } from "react-bootstrap";
 import carouselBackup from "../img/carouselBackup.png";
-import { FcComments, FcClapperboard, FcInfo,FcGlobe } from "react-icons/fc";
+import {
+  FcComments,
+  FcClapperboard,
+  FcInfo,
+  FcGlobe,
+  FcGenericSortingDesc,
+  FcBookmark,
+} from "react-icons/fc";
 import ReactStars from "react-rating-stars-component";
 import Maps from "../components/Maps";
-import backupImg from "../img/carouselBackup.png"
-import backup2Img from "../img/backup2.jpg"
-import backup3Img from "../img/backup3.jpg"
+import backupImg from "../img/carouselBackup.png";
+import backup2Img from "../img/backup2.jpg";
+import backup3Img from "../img/backup3.jpg";
+import SeatSelect from "../components/SeatSelect";
+import backup4Img from "../img/backup4.png";
+import backup5Img from "../img/backup5.png";
+import Footer from "../components/Footer";
 
 function EventDetail() {
   // //Days Control Case
-  
+
   const [detail, setDetail] = useState("");
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
@@ -27,7 +38,6 @@ function EventDetail() {
   useEffect(() => {
     dataDetail();
   }, []);
-  
 
   return (
     <>
@@ -48,8 +58,10 @@ function EventDetail() {
                       className="d-block w-100"
                       src={detail.carouselImg1}
                       alt="First slide"
-                      style={{ height: 450, objectFit:"contain" }}
-                      onError={(e) => (e.target.onerror = null, e.target.src = backup2Img)}
+                      style={{ height: 450, objectFit: "contain" }}
+                      onError={(e) => (
+                        (e.target.onerror = null), (e.target.src = backup2Img)
+                      )}
                     />
                   </Carousel.Item>
                   <Carousel.Item>
@@ -61,8 +73,10 @@ function EventDetail() {
                           : carouselBackup
                       }
                       alt="Second slide"
-                      style={{ height: 450, objectFit:"contain" }}
-                      onError={(e) => (e.target.onerror = null, e.target.src = backup3Img)}
+                      style={{ height: 450, objectFit: "contain" }}
+                      onError={(e) => (
+                        (e.target.onerror = null), (e.target.src = backup3Img)
+                      )}
                     />
                   </Carousel.Item>
                 </Carousel>
@@ -73,7 +87,7 @@ function EventDetail() {
             {/* Event Name and Category */}
             <Row className="mt-4 detail-NameCategory">
               <Col lg={6}>
-                <h3 style={{fontWeight: '600'}}>{detail.eventName}</h3>
+                <h3 style={{ fontWeight: "600" }}>{detail.eventName}</h3>
                 <FcComments />
                 <span className="detailEventName">{detail.category}</span>
               </Col>
@@ -119,7 +133,9 @@ function EventDetail() {
                     height="150"
                     className="artistImg"
                     alt="Artist"
-                    onError={(e) => (e.target.onerror = null, e.target.src = backupImg)}
+                    onError={(e) => (
+                      (e.target.onerror = null), (e.target.src = backup5Img)
+                    )}
                   ></img>
                   <p style={{ fontSize: "20px", fontWeight: "600" }}>
                     {item.name}
@@ -129,54 +145,129 @@ function EventDetail() {
             </Row>
             {/* Koltuk Seçimi */}
             <Row className="mt-4 detailSeat">
-              <Col md={6} className="seat">
-                <h3>Koltuk Seçimi</h3>
+              <Col md={6}>
+                <FcGenericSortingDesc
+                  style={{ marginRight: "10px", marginBottom: "5px" }}
+                />
+                <span
+                  style={{
+                    marginBottom: "20px",
+                    fontSize: "27px",
+                    fontWeight: "600",
+                    marginTop: "15px",
+                  }}
+                >
+                  Koltuk Seçimi
+                </span>
+                <div className="sceneCnt">
+                  <Row>
+                    <Col lg={8}>
+                      <Row style={{ marginBottom: "60px" }}></Row>
+                      <Row style={{ marginBottom: "15px" }}>
+                        <div className="seatFirst">Sahne</div>
+                      </Row>
+                      <Row style={{ marginBottom: "15px" }}>
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                          <p style={{ margin: "auto 15px", fontWeight: "600" }}>
+                            A
+                          </p>
+                          <div className="seat">A1</div>
+                          <div className="seat">A2</div>
+                          <div className="seat">A3</div>
+                          <div className="seat">A4</div>
+                          <div className="seat">A5</div>
+                        </div>
+                      </Row>
+                      <Row style={{ marginBottom: "15px" }}>
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                          <p style={{ margin: "auto 15px", fontWeight: "600" }}>
+                            B
+                          </p>
+                          <div className="seat">B1</div>
+                          <div className="seat">B2</div>
+                          <div className="seat">B3</div>
+                          <div className="seat">B4</div>
+                          <div className="seat">B5</div>
+                        </div>
+                      </Row>
+                      <Row style={{ marginBottom: "15px" }}>
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                          <p style={{ margin: "auto 15px", fontWeight: "600" }}>
+                            C
+                          </p>
+                          <div className="seat">C1</div>
+                          <div className="seat">C2</div>
+                          <div className="seat">C3</div>
+                          <div className="seat">C4</div>
+                          <div className="seat">C5</div>
+                        </div>
+                      </Row>
+                    </Col>
+                    <Col lg={4} className="mt-3">
+                      <SeatSelect></SeatSelect>
+                    </Col>
+                  </Row>
+                </div>
               </Col>
 
-              <Col md={6} className="info">
-                
-                  <h3 style={{ marginBottom: "20px", fontWeight: "600" }}>
+              <Col md={6}>
+                <Row style={{ marginBottom: "60px" }}></Row>
+                <div className="info">
+                  <h3 style={{ marginBottom: "40px", fontWeight: "600" }}>
                     Etkinlik Hakkında Bilmeniz Gerekenler
                   </h3>
                   <div style={{ marginBottom: "10px", display: "flex" }}>
-                    <div><FcInfo size={22} style={{ marginRight: "10px" }} /></div>
+                    <div>
+                      <FcInfo size={22} style={{ marginRight: "10px" }} />
+                    </div>
                     <p>E-Biletiniz Mail ve Sms olarak size gelecektir.</p>
                   </div>
                   <div style={{ marginBottom: "10px", display: "flex" }}>
-                  <div><FcInfo size={22} style={{ marginRight: "10px" }} /></div>
+                    <div>
+                      <FcInfo size={22} style={{ marginRight: "10px" }} />
+                    </div>
                     <p>Çıktı almanıza gerek yoktur.</p>
                   </div>
                   <div style={{ marginBottom: "10px", display: "flex" }}>
-                  <div><FcInfo size={22} style={{ marginRight: "10px" }} /></div>
+                    <div>
+                      <FcInfo size={22} style={{ marginRight: "10px" }} />
+                    </div>
                     <p>
-                    Mekan uygun görmediği kişilerin bilet bedelini iade etmek koşuluyla etkinlik alanına almama hakkına sahiptir.
+                      Mekan uygun görmediği kişilerin bilet bedelini iade etmek
+                      koşuluyla etkinlik alanına almama hakkına sahiptir.
                     </p>
                   </div>
                   <div style={{ marginBottom: "10px", display: "flex" }}>
-                  <div><FcInfo size={22} style={{ marginRight: "10px" }} /></div>
+                    <div>
+                      <FcInfo size={22} style={{ marginRight: "10px" }} />
+                    </div>
                     <p>
                       Güvenlik nedeniyle; açık sigara paketi, kesici alet, biber
                       gazı vb. içeri alınmamaktadır.
                     </p>
                   </div>
-                
+                </div>
               </Col>
             </Row>
             {/* Adress */}
             <Row className="mt-4 detailAddress">
-              <Col md={6} style={{padding:"20px"}}>
-                <h3 style={{fontWeight:"600",marginBottom:"20px"}}>{detail.place}</h3>
+              <h3 style={{ fontWeight: "600" }}>Adres Bilgileri</h3>
+              <Col md={6} style={{ padding: "20px" }}>
+                <Row style={{ marginTop: "20px" }}></Row>
+                <h3 style={{ fontWeight: "500", marginBottom: "20px" }}>
+                  {detail.place}
+                </h3>
                 <div className="adres">
                   <FcGlobe size={20}></FcGlobe>
-                  <p style={{fontSize:"18px"}}>{detail.address}</p>
+                  <p style={{ fontSize: "18px" }}>{detail.address}</p>
                 </div>
-                
               </Col>
               <Col md={6}>
                 <Maps lat={detail.lat} lng={detail.lng}></Maps>
               </Col>
             </Row>
           </Container>
+          
         </>
       )}
     </>
